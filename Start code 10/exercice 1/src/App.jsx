@@ -4,18 +4,21 @@ export default function App() {
   const [score, setScore] = useState("");
 
   const getScoreBarStyle = () => {
+    // 1- Compute width
     const numericScore = Number(score) || 0;
     const scoreWidth = `${numericScore * 10}%`;
 
-    let scoreColor = "#f3bc47";
+   // 2- Compute color (optional)
+    let scoreColor = "#4a9ef7";
     if (numericScore <= 3) {
       scoreColor = "#e74c3c";
     } else if (numericScore <= 7) {
       scoreColor = "#f3bc47";
     } else {
-      scoreColor = "#2ecc71";
+      scoreColor = "#53e636";
     }
 
+    // 3 - Return the style object
     return {
       width: scoreWidth,
       backgroundColor: scoreColor,

@@ -1,10 +1,20 @@
 import React from "react";
 
-export default function CheckoutButton({ total }) {
+export default function OrderCard({ product, price, quantity }) {
+  const format = (price) => "$ " + price;
+
   return (
-    <div className="checkout-button">
-      <p>Checkout</p>
-      <p className="right">{"$ " + total}</p>
+    <div className="order">
+      <div>
+        <h4>{product}</h4>
+        <small>{format(price)}</small>
+      </div>
+
+      <div className="order-quantity">
+        <div className="order-button">-</div>
+        <h4>{quantity}</h4>
+        <div className="order-button">+</div>
+      </div>
     </div>
   );
 }
